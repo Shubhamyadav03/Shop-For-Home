@@ -1,0 +1,127 @@
+<app-header></app-header>
+
+<div id="carousel1" class="carousel slide carousel-fade" data-ride="carousel">
+  <!--Indicators-->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel1" data-slide-to="1"></li>
+    <li data-target="#carousel1" data-slide-to="2"></li>
+  </ol>
+  <!--/.Indicators-->
+  <!--Slides-->
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <div class="view">
+        <img  src="https://cdn.pixabay.com/photo/2014/08/11/21/39/wall-416060_1280.jpg"
+          alt="First slide">
+        <div class="mask rgba-black-light"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Light mask</h3>
+        <p>First text</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <img  src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
+          alt="Second slide">
+        <div class="mask rgba-black-strong"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Strong mask</h3>
+        <p>Secondary text</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <img  src="https://images6.alphacoders.com/513/thumb-1920-513905.jpg"
+          alt="Second slide">
+        <div class="mask rgba-black-strong"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Strong mask</h3>
+        <p>Secondary text</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <img  src="https://c1.wallpaperflare.com/preview/203/382/576/fashion-girls-model-dress.jpg"
+          alt="Second slide">
+        <div class="mask rgba-black-strong"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Strong mask</h3>
+        <p>Secondary text</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <img  src="https://www.bigc.co.th/blog/wp-content/uploads/2020/10/set-of-household-kitchen-technics-on-yellow-backgr-XZP9C7Y-00.jpg"
+          alt="Second slide">
+        <div class="mask rgba-black-strong"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Strong mask</h3>
+        <p>Secondary text</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <!--Mask color-->
+      <div class="view">
+        <img class="d-block w-100" src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
+          alt="Third slide">
+        <div class="mask rgba-black-slight"></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Slight mask</h3>
+        <p>Third text</p>
+      </div>
+    </div>
+  </div>
+  <!--/.Slides-->
+  <!--Controls-->
+  <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <!--/.Controls-->
+</div>
+<div class="container">
+  <h4 class="p-2 border-bottom border-success">Products</h4>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let p of list">
+      <div class="card">
+        <div class="card-header text-center">
+          <h6>{{ p.pname }}</h6>
+        </div>
+        <img
+          class="card-img-top m-2"
+          src="http://localhost:8080/{{ p.photo }}"
+          alt="Card image cap"
+          style="width: 90%; height: 150px"
+        />
+        <div class="card-body text-center">
+          <p class="card-text">
+            {{ p.category.catname }}
+          </p>
+          <p>Price: &#8377; {{ p.price }}</p>
+          <button (click)="addtocart(p.id)" class="btn btn-primary btn-sm mr-2">
+            Add to Cart
+          </button>
+          <button (click)="addtowishlist(p.id)" class="btn btn-success btn-sm">
+            Add to Wishlist
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

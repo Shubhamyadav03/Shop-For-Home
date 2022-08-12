@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="container">
+  <h4>Customers List</h4>
+  <div class="row">
+    <div class="col-sm-10">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Gender</th>
+      <th>Email Id</th>
+      <th>Phone</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of list">
+      <td>{{ p.name }}</td>
+      <td>{{ p.city }}</td>
+      <td>{{ p.gender }}</td>
+      <td>{{ p.userid }}</td>
+      <td>{{ p.phone }}</td>
+      <td>
+        <button class="btn-danger btn-sm" (click)="deleteuser(p.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<app-footer></app-footer>

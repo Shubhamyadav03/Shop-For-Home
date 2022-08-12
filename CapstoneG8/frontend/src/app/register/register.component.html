@@ -1,0 +1,165 @@
+
+<app-header></app-header>
+<section class="background-radial-gradient overflow-hidden">
+  <style>
+    .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: radial-gradient(650px circle at 0% 0%,
+          hsl(218, 41%, 35%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+          hsl(218, 41%, 45%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%);
+    }
+
+    #radius-shape-1 {
+      height: 220px;
+      width: 220px;
+      top: -60px;
+      left: -130px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+    }
+
+    #radius-shape-2 {
+      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+      bottom: -60px;
+      right: -110px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+    }
+
+    .bg-glass {
+      background-color: hsla(0, 0%, 100%, 0.9) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+    }
+  </style>
+
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+          The best offer <br />
+          <span style="color: hsl(218, 81%, 75%)">at your door step</span>
+        </h1>
+        <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+          Welcome to shop for me
+        </p>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <form [formGroup]="fg" (submit)="registeruser(fg.value)" novalidate>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-group">
+                    <input type="text"
+                    formControlName="name"
+                    required
+                    name="name"
+                    placeholder="Customer Name"
+                    class="form-control"/>
+
+                    <label class="form-text text-danger"
+              *ngIf="submitted && !fg.controls['name'].valid">Name must be given</label>
+                  </div>
+                </div>
+
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-group">
+                    <input type="text"
+                    formControlName="city"
+                    required
+                    name="city"
+                    placeholder="City"
+                    class="form-control" />
+                    <label class="form-text text-danger"
+                    *ngIf="submitted && !fg.controls['city'].valid">City must be given</label>
+                  </div>
+                </div>
+              </div>
+<!-- Gender input -->
+<div class="form-group">
+  <select class="form-control"  formControlName="gender"
+  required
+  name="gender"
+  
+>
+<option value="choose">Select Gender</option>
+  <option>Male</option>
+  <option>Female</option>
+</select>
+            <small class="form-text text-danger"
+            *ngIf="submitted && !fg.controls['gender'].valid">Gender must be selected</small>
+</div>
+              <!-- Email input -->
+              <div class="form-group">
+                <input
+                type="email"
+                formControlName="userid"
+                required
+                name="userid"
+                placeholder="Email Id"
+                class="form-control" />
+                <label class="form-text text-danger"
+                *ngIf="submitted && !fg.controls['userid'].valid">Email address is necessary</label>
+              </div>
+ <!-- Contact input -->
+ <div class="form-group">
+  <input
+  type="text"
+              maxlength="10"
+              formControlName="phone"
+              required
+              name="phone"
+              placeholder="Mobile No"
+              class="form-control"/>
+  <label class="form-text text-danger"
+  *ngIf="submitted && !fg.controls['userid'].valid">Contact is necessary</label></div>
+
+
+              <!-- Password input -->
+              <div class="form-group">
+                <input type="password"
+                formControlName="pwd"
+                required
+                name="pwd"
+                placeholder="Password"
+                class="form-control" />
+                <label class="form-text text-danger"
+                *ngIf="submitted && !fg.controls['pwd'].valid">Password must be given</label>
+              </div>
+
+              <!-- Checkbox -->
+          
+
+              <!-- Submit button -->
+              <button type="submit"
+              value="Register" class="btn btn-primary btn-block mb-4">
+                Register
+              </button>
+
+              <!-- Register buttons -->
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

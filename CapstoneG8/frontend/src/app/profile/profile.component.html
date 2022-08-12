@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+<section style="background-color: rgb(103, 240, 235);">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col">
+       
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;">
+            <h5 class="my-3">{{ uinfo.name }}</h5>
+          
+          </div>
+        </div>
+   
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ uinfo.city }}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Gender</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ uinfo.gender }}</p>
+              </div>
+            </div>
+           
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email Id</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ uinfo.userid }}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Phone no</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ uinfo.phone }}</p>
+              </div>
+              
+            </div>
+            <hr>
+            
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

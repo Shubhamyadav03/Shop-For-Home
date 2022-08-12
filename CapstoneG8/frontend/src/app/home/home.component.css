@@ -1,0 +1,12 @@
+#carousel1 {
+    padding: 40px; 
+    }
+.carousel-inner{
+    height: 60vh;
+}
+
+
+img{
+    height: 100% ;
+    width:  100% ;
+}
